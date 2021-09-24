@@ -1,5 +1,5 @@
 # Election_Voting_App_Back_End-Flask-Python-PostgreSql
-A web application development (only - back-end) having two basic REST APIs to manage election process by add votes to candidate and get the votes count of each candidate.
+A web application development (only - back-end) having two basic REST APIs to manage election process by add votes to candidates and get the votes count of each candidate.
 
 #
 ## Features ( Details about the REST APIs ) 
