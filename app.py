@@ -10,15 +10,15 @@ from src.models import VoteCount, VoteCountSchema
 # Create instance of schemas
 voteCountSchema = VoteCountSchema(many = False)
 
-
 """
-    The function handle_exception() return error response in json format
+    The function handle_exception() get the error as argument
+    and return error response in json format
         response = {
             "status code" : status code of the error,
             "error" : name of the error,
             "description" : description of the error
         }
-"""
+                                                            """
 
 # HTTP Error handndler
 @app.errorhandler(HTTPException)
@@ -58,11 +58,13 @@ def handle_exception(e):
 
 def add_vote():
     """
-    This function will accept POST request with a body
-    with type JSON
-        body : 
-            {"candidate" : <string>}
-    """
+        This function will accept POST request with a body
+        with type JSON
+            body : 
+                {"candidate" : <string>}
+        
+        return : json type details of the candidate
+                or error response                       """
     try:
         candidate = request.json['candidate']
         votes = 1
@@ -106,6 +108,16 @@ def add_vote():
 # Get the candidate deails with the given candidate_id 
 def get_vote_count(candidate_id):
 
+    """
+        This function will accept GET request with a variable 
+        candidate_id
+            body : 
+                {"candidate" : <string>}
+        
+        return : json type vote count of the candidate
+                with the given candidate_id
+                or error response                       """
+
     # Get the details of the candidate with the given candidate_id
     candidate = VoteCount.query \
     .filter(VoteCount.id == candidate_id) \
@@ -113,9 +125,6 @@ def get_vote_count(candidate_id):
 
     # if the candidate with the candidate_id is exist
     if candidate is not None:
-
-        # Serialize the data for the response
-        data = voteCountSchema.dump(candidate)
 
         # Log the vote count to console
         app.logger.info(candidate.votes)
