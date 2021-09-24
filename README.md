@@ -31,7 +31,7 @@ Database : PostgreSql DB
 
 * Install python & pip.
 * Setup the PostgreSql database.
-* Change the User_Name, Password, Host & Database_name in the "SQLALCHEMY_DATABASE_URI" in the src/init_app.py file.
+* In the src/init_app.py file change the User_Name, Password, Host & Database_name in the database_url or update the database_url with yours.
 * On the terminal cd into app folder.
 * Run the following command to install required modules.
 ```
