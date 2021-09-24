@@ -1,4 +1,4 @@
-from init_app import db
+from src.models import db
 
 # Create the database
 db.create_all()
