@@ -39,7 +39,7 @@ pip install -r requirements.txt
 ``` 
 * To create the table in the database from the model run the command; 
 ```
-python src/build_database.py
+python build_database.py
 ```
 * Run the following command in the terminal to run the app.
 ```
